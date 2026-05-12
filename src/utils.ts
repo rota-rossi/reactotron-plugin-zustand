@@ -17,6 +17,10 @@ function removeFunctions(value: any): any {
       .filter((item) => typeof item !== 'function');
   }
 
+  if (value instanceof Date) {
+    return value;
+  }
+
   const newObj: any = {};
 
   for (const key in value) {
